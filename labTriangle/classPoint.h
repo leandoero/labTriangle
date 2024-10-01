@@ -1,12 +1,17 @@
 #pragma once
+#include <iostream>
+#include <string>
+
 #define cout std::cout
 #define endl std::endl
 #define cin std::cin
 
 class Point {
-	double x, y;
+	double* x;
+	double* y;
 public:
-	Point(double first = 0, double second = 0);
+	Point(double first = 0.0, double second = 0.0);
+	Point(const Point& other);
 	void  moveX(double moveX);
 	void moveY(double moveY);
 	double const distanceToOrigin();
@@ -19,4 +24,5 @@ public:
 	void setX(double x);
 	void setY(double y);
 	std::string printCoord() const;
+	~Point();
 };
