@@ -15,15 +15,13 @@ double Triangle::getSideSecondThird() {
 	return side;
 }
 
-double Triangle::getAngleAcrossFirstSecond() {				//первые переданный означанает что для него ищем угол
+double Triangle::getAngleAcrossFirstSecond() {	
 	const double PI = 3.141592653589793116;
 	double a = getSideFirstSecond();
 	double b = getSideFirstThird();
 	double c = getSideSecondThird();
 
 	double cosA = (b * b + c * c - a * a) / (2 * b * c);
-	if (cosA < -1.0 || cosA > 1.0)
-		cout << "Error" << endl;
 	double angleInRadians = std::acos(cosA);
 
 	double angleInDegrees = angleInRadians * (180.0 / PI);

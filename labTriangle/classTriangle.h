@@ -9,6 +9,11 @@
 class Triangle {
 	Point coordFirst, coordSecond, coordThird;
 public:
+	/*можно еще допилить оператор присваивания потому что 
+	Triangle::Triangle(const Point& first, const Point& second, const Point& third) :coordFirst(first), coordSecond(second), coordThird(third) {};
+	в этой строчке срабатывает конструктор копирования в Point, но если бы я прописывал непосредственно тело то возникла бы проблема.
+	Поэтому стоило бы перегрузить присваивание.
+	*/
 	Triangle(const Point& first, const Point& second, const Point& third);
 	double getSideFirstSecond();
 	double getSideSecondThird();
@@ -18,6 +23,6 @@ public:
 	double getAngleAcrossSecondThird();
 	double triangleArea();		//вычисление площади
 	double trianglePerimeter();
-	double triangleHeight(unsigned int index);		//первые два передаваемый параметр это относительно этой стороны будет вычисляться высота
+	double triangleHeight(unsigned int index);		
 	void determineTypeTriangle();
 };
